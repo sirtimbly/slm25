@@ -119,4 +119,7 @@ dist
 .sqlite
 
 lib/
-config/
+config/*
+!config/custom-environment-variables.json
+!config/default.ts
+!config/test.ts
