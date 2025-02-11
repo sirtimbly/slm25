@@ -8,6 +8,6 @@
 		"outDir": "dist"
 		// "tsBuildInfoFile": "out-tsc/api-server/tsconfig.app.tsbuildinfo"
 	},
-	"include": ["src/**/*"],
+	"include": ["src/**/*", "config/**/*"],
 	"exclude": ["eslint.config.js", "eslint.config.cjs", "eslint.config.mjs"]
 }

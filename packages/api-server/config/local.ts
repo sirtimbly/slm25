@@ -1,4 +1,4 @@
-import type { ApplicationConfiguration } from "../src/configuration";
+import type { ApplicationConfiguration } from "../src/configuration.js";
 
 const config: Partial<ApplicationConfiguration> = {
 	postgresql: {

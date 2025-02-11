@@ -1,10 +1,14 @@
-import typebox from "@feathersjs/typebox";
+import {
+	Type,
+	getValidator,
+	defaultAppConfiguration,
+} from "@feathersjs/typebox";
 import type { Static } from "@feathersjs/typebox";
-const Type = typebox.Type;
+
 import { dataValidator } from "./validators.js";
 
 export const configurationSchema = Type.Intersect([
-	typebox.defaultAppConfiguration,
+	defaultAppConfiguration,
 	Type.Object({
 		host: Type.String(),
 		port: Type.Number(),
@@ -14,7 +18,7 @@ export const configurationSchema = Type.Intersect([
 
 export type ApplicationConfiguration = Static<typeof configurationSchema>;
 
-export const configurationValidator = typebox.getValidator(
+export const configurationValidator = getValidator(
 	configurationSchema,
 	dataValidator,
 );

@@ -1,0 +1,41 @@
+{
+  "sourceRoot": "packages/api-server/src",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "main": "{projectRoot}/src/index.ts",
+        "tsConfig": "{projectRoot}/tsconfig.app.json",
+        "outputPath": "{projectRoot}/dist",
+        "platform": "node",
+        "skipTypeCheck": false,
+        "declaration": false,
+        "bundle": false,
+        "assets": [
+          "{projectRoot}/config/"
+        ],
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": [
+        "build"
+      ],
+      "options": {
+        "buildTarget": "@slm/api-server:build",
+        "watch": true,
+        "runBuildTargetDependencies": false
+      }
+    }
+  }
+}

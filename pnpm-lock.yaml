@@ -56,6 +56,12 @@ importers:
       '@feathersjs/typebox':
         specifier: ^5.0.32
         version: 5.0.32(typescript@5.7.3)
+      ajv:
+        specifier: 8.17.1
+        version: 8.17.1
+      ajv-formats:
+        specifier: 3.0.1
+        version: 3.0.1(ajv@8.17.1)
       knex:
         specifier: ^3.1.0
         version: 3.1.0(pg@8.13.1)

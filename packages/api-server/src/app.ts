@@ -15,10 +15,10 @@ import socketio from "@feathersjs/socketio";
 import { configurationValidator } from "./configuration.js";
 import type { Application } from "./declarations.js";
 import { logError } from "./hooks/log-error.js";
-// import { postgresql } from "./postgresql.js";
-// import { authentication } from "./authentication.js";
-// import { services } from "./services/index.js";
-// import { channels } from "./channels.js";
+import { postgresql } from "./postgresql.js";
+import { authentication } from "./authentication.js";
+import { services } from "./services/index.js";
+import { channels } from "./channels.js";
 
 const app: Application = koa(feathers());
 
@@ -41,10 +41,10 @@ app.configure(
 		},
 	}),
 );
-// app.configure(postgresql);
-// app.configure(authentication);
-// app.configure(services);
-// app.configure(channels);
+app.configure(postgresql);
+app.configure(authentication);
+app.configure(services);
+app.configure(channels);
 
 // Register hooks that run on all service methods
 app.hooks({

@@ -3,19 +3,20 @@
   "version": "0.0.1",
   "private": true,
   "type": "module",
-  "main": "./src/index.ts",
+  "main": "./dist/src/index.js",
   "types": "./src/index.ts",
   "exports": {
     ".": {
       "types": "./src/index.ts",
-      "import": "./src/index.ts",
-      "default": "./src/index.ts"
+      "import": "./dist/src/index.js",
+      "default": "./dist/src/index.js"
     },
     "./package.json": "./package.json"
   },
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "shx rm -rf dist/ && tsc -p tsconfig.app.json",
+    "build": "shx rm -rf dist/",
+    "typecheck": "tsc -p --noEmit tsconfig.app.json",
     "start": "node lib/",
     "prettier": "npx prettier \"**/*.ts\" --write",
     "mocha": "cross-env NODE_ENV=test mocha test/ --require ts-node/register --recursive --extension .ts --exit",
